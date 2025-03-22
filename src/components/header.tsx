@@ -14,9 +14,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useState } from "react";
-import { ArrowRightFromLine, User } from "lucide-react";
+import { ArrowRightFromLine, Edit, User } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { DropMenu } from "./drop-menu";
+import { Input } from "./ui/input";
 
 export function Header() {
   const [loading, setLoading] = useState(true);
@@ -44,8 +45,16 @@ export function Header() {
         <nav>
           <ul className="flex space-x-4 items-center">
             <li>
-              <Link href="/dashboard"></Link>
+              <Input placeholder="Search" />
             </li>
+            <li>
+              <Button variant="outline" asChild>
+                <Link href="">
+                  <Edit />
+                </Link>
+              </Button>
+            </li>
+
             <li>
               <ModeToggle />
             </li>
